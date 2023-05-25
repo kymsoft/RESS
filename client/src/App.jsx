@@ -13,6 +13,8 @@ import SavedInvoice from './scenes/SavedInvoice';
 import SalesRecords from './scenes/SalesRecords';
 import Inventory from './scenes/Inventory';
 import NewProduct from './scenes/NewProduct';
+import Login from './scenes/Authentication/Login';
+import Signup from './scenes/Authentication/Signup';
 
 
 const App = () => {
@@ -25,8 +27,10 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline/>
           <Routes>
+            <Route path="/" element={<Login/>} />
+            <Route path="/signup" element={<Signup/>} />
             <Route element={<Layout/>}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />}  />
+              <Route path="/layout" element={<Navigate to="/dashboard" replace />}  />
               <Route path="/dashboard" element={<Dashboard/>} />
               <Route path="/invoice" element={<Invoice/>} />
               <Route path="/create-invoice" element={<CreateInvoice/>} />
